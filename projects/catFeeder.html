@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Automatic Cat Feeder — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="project-hero-banner">
+    <img src="../images/cat_header.jpg" alt="Automatic Cat Feeder">
+    <div class="project-hero-banner__text">
+      <h1>Automatic Cat Feeder</h1>
+      <p>Embedded Systems & Mechanical Design | Georgia Tech | 2025</p>
+    </div>
+  </div>
+
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">Embedded Systems</span>
+      <span class="tag">Circuit Design</span>
+      <span class="tag">Soldering</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>
+          In this project I created a fully autonomous automatic cat feeder that dispenses a user-specified 
+          amount of food at two user specified times each day. The system is controlled by an ESP32 
+          microcontroller and connects over WiFi, letting the user set feeding times and portion 
+          sizes from any device. It combines custom mechanical design of a 3D printed 
+          housing and food dispensing system, a hand-soldered circuit, and embedded C++.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>
+          The goal was to build a feeder that could run independently for short trips without 
+          any manual intervention. Key requirements were reliable scheduled dispensing, easy 
+          user configuration without physical access to the device, a robust housing that 
+          could be opened for repairs but cannot be opened by a cat, and a manual override button.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>
+          Food dispensing is handled by a stepper motor driving a screw auger through a 1.5" 
+          PVC tee channel, with portion size controlled by the number of motor revolutions. 
+          The full assembly was modeled in SolidWorks before fabrication. The circuit was designed 
+          from scratch and hand-soldered onto a protoboard. It integrates a DS1307 real time clock for timekeeping, 
+          a 16x2 I2C LCD displaying countdown to the next feed, and a recessed push button for 
+          manual feeding. The ESP32 hosts a WiFi access point and a lightweight web server, 
+          serving an HTML page where the user sets two daily feed times and a serving count. 
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>
+          The feeder works reliably for scheduled and manual dispensing, with repeated testing confirming
+          no clogging. The WiFi interface successfully updates 
+          feeding times and portions remotely, and the LCD countdown runs smoothly. 
+          The biggest lessons from this project came from the soldering process, working 
+          through multiple wiring mistakes ultimately led to a much 
+          cleaner final circuit and a solid understanding of protoboard layout.
+        </p>
+      </div>
+
+      <div class="media-row">
+        <div class="media-item">
+          <h3>Full Assembly</h3>
+          <img src="../images/catFeeder.jpg" alt="Cat Feeder Full Assembly">
+        </div>
+
+        <div class="media-item">
+          <h3>Circuitry</h3>
+          <img src="../images/circuit.jpg" alt="Cat Feeder Circuit">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+<div class="project-nav">
+  <a href="./windTurbineDesign.html" class="back-link previous-project">← Previous Project</a>
+  <a href="./robot.html" class="back-link next-project">Next Project →</a>
+</div>
+
+</html>

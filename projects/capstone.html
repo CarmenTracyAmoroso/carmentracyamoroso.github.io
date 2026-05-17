@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Capstone Net Launcher — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- Full-width hero: wide landscape photo with text ON TOP -->
+  <div class="project-hero-banner">
+    <img src="../images/capstone_header.jpg" alt="Capstone Net Launcher">
+    <div class="project-hero-banner__text">
+      <h1>Capstone Net Launcher</h1>
+      <p>Senior Capstone | Georgia Tech | 2026</p>
+    </div>
+  </div>
+
+  <!-- Content below -->
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">Mechanical Design</span>
+      <span class="tag">Electronics & Wiring</span>
+      <span class="tag">System Integration</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>For Interdisciplinary Senior Design at Georgia Tech, I collaborated with a team of six to develop a low cost, 
+          kinetic, counter UAS system for the Defense Innovation Unit (DIU). Our team created an autonomous, vehicle mounted turret 
+          that uses computer vision to detect and track a drone, then a pneumatic net launcher to neutralize it.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>Small, high speed, and highly manuverable kamikaze drones are increasingly targeting armored vehicles, risking lives 
+          and military missions. Current counter UAS solutions often rely on RF jamming, which is ineffective against drones using 
+          fiber optic communicaiton, or are expensive to deploy at a large scale such as missile systems. Lower cost solutions often 
+          require manual operation which is not feasible for personnel inside an armored vehicle.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>Our final design is a vehicle-mounted, autonomous, net-launching turret which can track and intercept a rogue drone before 
+          it reaches an armored vehicle. The design uses computer vision to identify and track a drone up to 22 feet away. After the 
+          target is identified, the turret aims towards it and launches a net using compressed air, which has an effective range of over 7 
+          feet away. The net entangles itself around the propellers of the enemy drone and halts its forward momentum, grounding it before 
+          it can get within the effective range of its explosive payload.</p>
+        <h4>Detection:</h4>
+        <ul>
+          <li>Trained a YOLOv8n computer vision model on ~25,000 images</li>
+          <li>Model runs onboard a Jetson Orin Nano</li>
+          <li>Optimization of video resolution and use of multithreading to minimize latency and maximize range</li>
+        </ul>
+
+        <h4>Aiming:</h4>
+        <ul>
+          <li>Jetson sends the position of the drone to an STM32 through UART communication</li>
+          <li>STM32 controls pitch through 90° and roll through 300° using a PID controller</li>
+          <li>Implemented limit switches to prevent motor over-torquing</li>
+        </ul>
+
+        <h4>Firing:</h4>
+        <ul>
+          <li>Solenoid valve releases compressed air from a pressurized tank</li>
+          <li>Air redirected through a custom 3D-printed barrel adapter</li>
+          <li>Weights attached to the net are propelled forward to intercept drone</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>The project successfully demonstrated that it could be a robust and reliable counter UAS solution with successful field testing. 
+          The field testing yielded 100% capture rate for hovering drones, 75% capture rate for targets in lateral or approaching motion, and 
+          100% successful net deployment. The field testing proved a 22ft detection range and a 10-24ft horizontal grounding range.</p>
+        
+        <p>Key technical takeaways included:</p>
+        <ul>
+          <li><strong>Latency Management:</strong> Minimizing frame to motor delay is more critical than maximizing image resolution with a fast moving target.</li>
+          <li><strong>Environmental Robustness:</strong> Testing revealed that varying light and background conditions required a more diverse training dataset for the YOLOv8n model, leading us to expand our dataset.</li>
+          <li><strong>Control Optimization:</strong> Refining the PID controller must account for the physical inertia of the loaded turret to prevent oscillation while maintaining speed.</li>
+        </ul>
+      </div>
+
+      <!-- Poster and video -->
+      <div class="media-row">
+        <div class="media-item">
+          <h3>Project Poster</h3>
+          <img src="../images/capstone_presentation.jpg" alt="Capstone Net Launcher Project Poster">
+        </div>
+
+        <div class="media-item">
+          <h3>Demo Video</h3>
+          <iframe
+            src="https://www.youtube.com/embed/H29yRd6_k2E"
+            title="Capstone Net Launcher Demo"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+<a href="./yjsp.html" class="back-link next-project">Next Project →</a>
+</html>
+

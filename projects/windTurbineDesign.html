@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wind Turbine Design — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="project-hero-banner">
+    <img src="../images/wind_header.jpg" alt="Offshore Wind Turbine">
+    <div class="project-hero-banner__text">
+      <h1>Offshore Wind Turbine Design and Analysis</h1>
+      <p>Aerodynamics | Georgia Tech | 2025</p>
+    </div>
+  </div>
+
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">Aerodynamics</span>
+      <span class="tag">Blade Element Momentum Theory</span>
+      <span class="tag">Rotor Design</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>
+          This project designed and analyzed a 2 MW offshore wind turbine for a wind farm located 
+          20 km off the southern coast of the Kanto region in Japan, where average wind speeds 
+          average at 8.69 m/s at a 100 m hub height. The design process covered rotor sizing, airfoil 
+          selection, and blade geometry optimization, followed by performance validation using 
+          WT_PERF, a Blade Element Momentum (BEM) Theory simulation tool.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>
+          Existing offshore wind farms in Japan average around 4.4 MW per turbine, serving the 
+          high power demands of the greater Tokyo area. The goal was to design a 2 MW turbine 
+          optimized for the specific wind conditions, balancing aerodynamic efficiency, 
+          structural integrity, and environmental/noise constraints. Key design challenges included selecting an 
+          appropriate tip speed ratio without over stressing the blade tip, choosing airfoils that 
+          perform well under rough offshore air conditions, and determining a chord and twist 
+          distribution that maximizes the power coefficient across the expected wind speed range.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>
+          Hub height and rotor radius were found solving  
+          iteratively with MATLAB using the rated wind speed and power equations, converging to 0.01% relative error in 7 
+          iterations to a blade radius of 33.4 m and hub height of 66.8 m. A tip speed ratio of 7 
+          was selected, yielding an angular velocity of 2.58 rad/s and a tip speed of 86.14 m/s.
+          Three airfoils from Dan Somers' family were chosen for different spanwise regions: the 
+          S818 at the root (to 45% span) for structural thickness, the S825 through the mid-span, 
+          and the thinner S826 at the tip to minimize drag where loading is greatest. Twist and chord distributions were calculated for 19 
+          blade elements, with chord derived using the Betz limit to 
+          maximize theoretical power extraction. The resulting nonlinear chord distribution peaks 
+          near the root and tapers toward the tip, with small increases at each airfoil transition. 
+          The final design was validated and refined in WT_PERF, sweeping pitch angles from 4° to 
+          16° and tip speed ratios from 5 to 15, comparing linear and nonlinear chord distributions 
+          across all conditions.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>
+          The nonlinear chord distribution consistently outperformed the linear distribution across 
+          all tested conditions. The maximum power coefficient of 0.484 was achieved at a TSR of 9 
+          and a fixed pitch of 4 degrees. At the site's average wind speed of 8.69 m/s, the turbine 
+          produces approximately 600 kW, with rated power of 2 MW reached at roughly 13 m/s. 
+          A fixed pitch of 4 degrees was recommended over variable pitch, as wind speeds 
+          rarely exceed the 13 m/s cutout threshold and the added mechanical complexity of a 
+          variable pitch system is difficult to justify for an offshore windfarm without high wind speeds. If higher wind speeds were more 
+          common, increasing pitch to 12 degrees above 13 m/s could extend operation to 
+          approximately 15.75 m/s.
+        </p>
+      </div>
+
+      <div class="media-row">
+        <div class="media-item">
+          <h3>Twist Distribution</h3>
+          <img src="../images/twist.jpg" alt="Blade Twist Distribution">
+        </div>
+
+        <div class="media-item">
+          <h3>Power Coefficient vs TSR</h3>
+          <img src="../images/wind_cp.jpg" alt="Cp vs TSR for varying pitch angles">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+<div class="project-nav">
+  <a href="./dataCenterCooling.html" class="back-link previous-project">← Previous Project</a>
+  <a href="./catFeeder.html" class="back-link next-project">Next Project →</a>
+</div>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Composite Ablative Engine — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- Full-width hero: wide landscape photo with text ON TOP -->
+  <div class="project-hero-banner">
+    <img src="../images/yjsp_header.jpg" alt="Engine">
+    <div class="project-hero-banner__text">
+      <h1>Composite Ablative Engine Manufacturing and Testing</h1>
+      <p>Darcy Engine Development | Yellow Jacket Space Program | 2025</p>
+    </div>
+  </div>
+
+  <!-- Content below -->
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">Composite Manufacturing</span>
+      <span class="tag">Rocket Engine Testing</span>
+      <span class="tag">Test Data Analysis</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>With the Yellow Jacket Space Program (YJSP), I contributed to the manufacturing, 
+          test design, testing, and analysis of a composite ablative rocket engine for a nitrous 
+          oxide and isopropyl alcohol rocket. My contribution centered on modifying an 
+          existing test stand, creating test scripts to give live test results, and supporting with composite layups. Final hot fire testing 
+          yielded a successful 34 second burn with steady mass flow rates and 20-40% pressure stiffness across the injector.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>In order to reach the Karman line where space begins, our rocket engine needed sustain a 33 second burn without compromising 
+          structural integrity. To do this, several engine cooling strategies were considered, such as regenerative cooling and a cooling 
+          film before selecting a composite ablative approach for its simplicity and small size. Once designed, this engine had to be tested 
+          with cold flows to fix the orifice sizing, then hot fired to ensure the ablation could effectively dissipate heat within the chamber.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>To prepare for testing day, I modified the test rig CAD based on the larger engine geometry, 
+          then water jetted the new mounting hardware. In parallel, I developed a MATLAB script to give 
+          live results as well as post test analysis. The script takes live data from pressure transducers, 
+          valve state sensors, thermocouples, and a force transducer, automatically trimming the dataset to a 
+          relevant window. Valve timing was analyzed directly from the data to see how long after each main valve was opened 
+          the corresponding injector pressure exceedded 10 psi to ensure propellants were flowing as expected. 
+          Post test calculations included discharge coefficient (CdA), mass flow rate for both the fuel and oxidizer sides,
+          mixture ratio, thrust, and C* (ideal characteristic velocity) and C* efficiency. 
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>The engine successfully achieved a ~34 second burn, consistently producing 175 lbf of thrust during hot fire testing, exceeding the 
+          required burn time. Real time instrumentation and post test analysis validated the expected mass flow rates found theoretically and 
+          during cold flow testing. These results confirmed the effectiveness of the ablative design and provided a strong foundation for scaling 
+          the engine up.</p>
+      </div>
+
+    
+      <!-- CAD and Data -->
+      <div class="media-row">
+        <div class="media-item">
+          <h3>Test Rig CAD</h3>
+          <img src="../images/engine.jpg" alt="YJSP Test Rig CAD">
+        </div>
+
+        <div class="media-item">
+          <h3>Test Results: Pressure Ladder</h3>
+          <img src="../images/pressureLadder.jpg" alt="YJSP Pressure Ladder">
+        </div>
+      </div>
+ 
+
+    </div>
+  </section>
+
+</body>
+
+<div class="project-nav">
+  <a href="./capstone.html" class="back-link previous-project">← Previous Project</a>
+  <a href="./windTurbineCFD.html" class="back-link next-project">Next Project →</a>
+</div>
+</html>

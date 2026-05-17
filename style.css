@@ -1,0 +1,421 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #111;
+  background: #fff;
+}
+
+/* ── Nav ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 56px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-left a, .nav-right a {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  text-decoration: underline;
+}
+
+.nav-center {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #111;
+}
+
+/* ── Hero ── */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 5rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-image img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: normal;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.hero-text p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons a { text-decoration: none; }
+
+.buttons button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  padding: 10px 28px;
+  border: 1.5px solid #111;
+  background: #111;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.buttons button:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* ── Projects Page ── */
+.projects-page {
+  padding: 5rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-page h2 {
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 0.4rem;
+  color: #111;
+}
+
+.projects-sub {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Project Grid ── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 4px;
+  position: relative;
+}
+
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.04);
+}
+
+.project-img.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed #ccc;
+  background: #fafafa;
+}
+
+.project-img.placeholder span {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #bbb;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 2px 0;
+}
+
+.project-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.4;
+}
+
+.project-year {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #999;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ── Project Detail Page ── */
+.project-detail {
+  padding: 3rem 6rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-link {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.back-link:hover { color: #111; }
+
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+
+.next-project {
+  display: block;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.previous-project {
+  display: block;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.project-detail-body p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Project Tags ── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: #111;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* ── Detail Sections ── */
+.detail-section {
+  margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #111;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.detail-section h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  margin-top: 0.6rem;
+  color: #444;
+}
+
+.detail-section p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.detail-section ul {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  padding-left: 1.5rem;
+  margin-top: 0.4rem;
+}
+
+/* ── Hero Banner ── */
+.project-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.project-hero-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.project-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.project-hero-banner__text {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 3.5rem;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.project-hero-banner__text h1 {
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.project-hero-banner__text p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+}
+
+/* ── Media Rows ── */
+.media-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 0px;
+}
+
+.media-item {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.media-item h3 {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #111;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.media-item img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
+.media-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero { flex-direction: column; padding: 3rem 2rem; gap: 2rem; }
+  .hero-image img { width: 100%; height: auto; }
+  .projects-page { padding: 3rem 2rem; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .project-detail { padding: 2rem 2rem 4rem; }
+}
+
+@media (max-width: 600px) {
+  .project-hero-banner { height: 300px; }
+  .project-hero-banner__text { left: 1.5rem; bottom: 1.5rem; }
+  .project-hero-banner__text h1 { font-size: 2rem; }
+}
+
+@media (max-width: 540px) {
+  nav { padding: 0 1.2rem; }
+  .nav-center { display: none; }
+  .project-grid { grid-template-columns: 1fr; }
+}

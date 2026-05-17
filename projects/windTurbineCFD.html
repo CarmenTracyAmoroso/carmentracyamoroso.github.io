@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wind Turbine CFD — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <!-- Full-width hero: wide landscape photo with text ON TOP -->
+  <div class="project-hero-banner">
+    <img src="../images/cfd_header.jpg" alt="Wind Turbine CFD">
+    <div class="project-hero-banner__text">
+      <h1>Wind Turbine CFD</h1>
+      <p>Computational Fluid Dynamics | Georgia Tech | 2025</p>
+    </div>
+  </div>
+
+  <!-- Content below -->
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">COMSOL Multiphysics</span>
+      <span class="tag">Fluid Mechanics</span>
+      <span class="tag">Rotating Meshing</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>In this project I modeled airflow around a horizontal axis wind turbine using COMSOL CFD software. A scaled down turbine with a 
+          1.434m diameter was simulated using a rotating mesh domain to analyze how blade rotation generates lift and torque, and how it affects 
+          downstream airflow.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>Wind turbines are often build on large wind farms, with the wake left behind one affecting the others, reducing the energy 
+          available to the next. Understanding how blade rotation influences downstream flow is critical for optimizing turbine spacing in 
+          a wind farm. This project sought to model that behavior by examining how wind speed and rotor speed affect flow patterns, torque, 
+          and power output under realistic operating conditions</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>The simulation used a rotating cylindrical domain surrounding the turbine blades, governed by the 3D Navier-Stokes equations for 
+          incompressible laminar flow. Rotor speed was tied to wind speed through a constant tip-to-speed ratio of 7, similar to real turbine 
+          control. A mesh study comparing coarse, normal, and fine mesh resolutions led to the selection of a normal mesh, which produced accurate 
+          results near the blade edges without using too much computational power. Two parametric studies were also run, one varying wind speed from 
+          0.0001 to 10 m/s, and another varying TSR from 3 to 9 to isolate the effect of rotor speed on wake and energy capture</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>The pressure distribution across the blade surfaces shows low pressure on the leading edge where flow accelerates and localized 
+          pressure drops at the blade tips, with the pressure differential increasing with higher TSR values. The velocity distribution confirms 
+          this behavior, with air slowing upstream of the turbine before accelerating around the blades. The bottom left plot shows how turbine 
+          power output scaled cubically with wind speed, matching the theoretical Betz limit formula but decreasing in accuracy as wind speed 
+          increased due to increased losses. As shown in the normalized wake velocity plot, increasing TSR produced stronger lift and more power, 
+          but at TSR = 9 the downstream wake degrades to just 20% of wind speed while moderate TSR values recover much more quickly, offering the 
+          best balance between individual turbine power and wind farm efficiency.</p>
+      </div>
+
+      <!-- Plots -->
+    <div class="media-row">
+      <div class="media-item">
+        <h3>Blade Pressure</h3>
+        <img src="../images/cfd_pressure.jpg" alt="CFD Pressure">
+      </div>
+      <div class="media-item">
+        <h3>Normalized Blade Velocity</h3>
+        <img src="../images/cfd_velocity.jpg" alt="CFD Wake">
+      </div>
+    </div>
+
+    <div class="media-row">
+      <div class="media-item">
+        <h3>Blade Power Output</h3>
+        <img src="../images/cfd_power.jpg" alt="CFD Power">
+      </div>
+    </div>
+
+    <div class="media-row">
+      <div class="media-item">
+        <h3>Normalized Wake Velocity for a Range of TSR Values</h3>
+        <img src="../images/wake.jpg" alt="CFD Wake">
+      </div>
+    </div>
+      
+    </div>
+  </section>
+
+</body>
+<div class="project-nav">
+  <a href="./yjsp.html" class="back-link previous-project">← Previous Project</a>
+  <a href="./dataCenterCooling.html" class="back-link next-project">Next Project →</a>
+</div>
+
+</html>

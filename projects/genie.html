@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Genie: Interactive Storytelling — Carmen Tracy-Amoroso</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="../index.html">Home</a>
+      <a href="../resume.pdf" target="_blank">Resume</a>
+      <a href="../projects.html">Projects</a>
+    </div>
+    <div class="nav-center">Carmen Tracy-Amoroso</div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/carmen-tracy-amoroso/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="project-hero-banner">
+    <img src="../images/genie_header.jpg" alt="Genie Interactive Storytelling">
+    <div class="project-hero-banner__text">
+      <h1>Genie: In-Home Interactive Storytelling</h1>
+      <p>Mobile and Ubiquitous Computing | Georgia Tech | 2026</p>
+    </div>
+  </div>
+
+  <section class="project-detail">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-tags">
+      <span class="tag">Flutter</span>
+      <span class="tag">IoT & Smart Home</span>
+      <span class="tag">Home Assistant</span>
+    </div>
+
+    <div class="project-detail-body">
+
+      <div class="detail-section">
+        <h3>Overview</h3>
+        <p>
+          In this project, a team of four created Genie: an interactive storytelling app that turns a smart home into a physical 
+          story experience for children. Built for iOS using Flutter, it communicates with 
+          the Georgia Tech Aware Home's Home Assistant platform to coordinate audio narration, 
+          on-screen visual prompts, and real-time IoT device actuation from a single 
+          interface. Rather than keeping a child seated in front of a screen, Genie distributes 
+          a story across rooms in the home, requiring the child to move through the space as 
+          the narrative progresses. The pilot story, "Finding Bubbles," guides users through 
+          the Aware Home using sequentially activated lights, smart blinds, and color-changing 
+          LED effects to bring an underwater adventure to life.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>The Problem</h3>
+        <p>
+          Around 81% of children aged 5-8 regularly use tablets, and high screen time is 
+          associated with reduced physical activity, lower developmental test scores, and 
+          fewer opportunities for motor and social skill development. Rather than cut out mobile device
+          usage to encourage physical activity, this project combined mobile devices with physical activity
+          to encourage children to be more active and creative.
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Design</h3>
+        <p>
+          The narrative engine loads stories from structured JSON files, where each step 
+          contains narration text, an emoji and title for the screen, and a list of device 
+          actions to trigger. When a step is entered, the app fires all device actions 
+          concurrently over the local network via Home Assistant REST API calls, then begins 
+          audio narration through the device's text-to-speech engine. Although there are some graphics on
+          the screen, audio is the primary mode of communication and the screen is kept minimal to encourage 
+          physical interaction. The IoT devices serve two roles. First, they guide the child through the home to the 
+          correct rooms where the story will progress, such as a series of lights turning on telling the child to walk down a hallway.
+          Second, they set the mood of the story more by dimming lights and closing blinds during scary scnees.
+          A custom 3D printed genie bottle was also designed to hold the mobile device securely during play. 
+        </p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Results</h3>
+        <p>
+          A user study with five participants in the Aware Home found that all five completed 
+          the full experience with minimal assistance. Post survey scores 
+          were strong across all dimensions: UI intuitiveness scored 4.8/5, enjoyment 4.6/5, 
+          navigation clarity 4.4/5, and immersion 4.2/5. Researchers observed participants 
+          visibly turning toward lighting changes and moving between rooms in response to story 
+          cues rather than focusing on the device. One notable finding was a photosensitivity 
+          concern flagged by two participant over the lightning flash effect, which were then replaced 
+          with slower, less intense flashing. Overall, 
+          Genie validated that immersive, physically interactive storytelling can be effectively 
+          embedded in a smart home, and established a solid architectural foundation for 
+          additional stories, richer actuation, and eventual dynamic narrative generation.
+        </p>
+      </div>
+
+      <div class="media-row">
+        <div class="media-item">
+          <h3>App Interface</h3>
+          <img src="../images/genie.jpg" alt="Genie App Screens">
+        </div>
+
+        <div class="media-item">
+          <h3>Physical Genie Device</h3>
+          <img src="../images/genie_cad.jpg" alt="Physical Genie Device">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+<a href="./robot.html" class="back-link previous-project">← Previous Project</a>
+
+</html>
